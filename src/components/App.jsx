@@ -1,16 +1,19 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+import React, { Component } from "react";
+import FeedbackContainer from "./FeedbackContainer";
+import FeedbackElements from "./FeedbackElements/FeedbackElements";
+
+
+export class App extends Component {
+
+
+  
+  render() {
+    return (
+      <>
+        <FeedbackContainer>
+          <FeedbackElements />
+        </FeedbackContainer>
+      </>
+    );
+  };
 };
