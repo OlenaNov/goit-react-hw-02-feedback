@@ -1,7 +1,7 @@
-import { CategoryFeedback, FeedbackCategoryList, FeedbackItem, ValueFeedback } from "./FeedbackStatistics.styled";
+import { CategoryFeedback, FeedbackCategoryList, FeedbackItem, ValueFeedback } from "./Statistics.styled";
 
-const FeedbackStatistics = ( { value: { good, neutral, bad }, onTotal, onPercentGood } ) => {
-    const percentGood = onPercentGood();
+const Statistics = ( { good, neutral, bad , total, positivePercentage } ) => {
+    const percentGood = positivePercentage();
     return (
         <FeedbackCategoryList>
             <FeedbackItem>
@@ -21,7 +21,7 @@ const FeedbackStatistics = ( { value: { good, neutral, bad }, onTotal, onPercent
             </FeedbackItem>
             <FeedbackItem>
                 <CategoryFeedback>Total: 
-                    <ValueFeedback>{onTotal()}</ValueFeedback>
+                    <ValueFeedback>{total()}</ValueFeedback>
                     </CategoryFeedback>
             </FeedbackItem>
             {percentGood && (<FeedbackItem>
@@ -33,4 +33,4 @@ const FeedbackStatistics = ( { value: { good, neutral, bad }, onTotal, onPercent
     );
 };
 
-export default FeedbackStatistics;
+export default Statistics;
