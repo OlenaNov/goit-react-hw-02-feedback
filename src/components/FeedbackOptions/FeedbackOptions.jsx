@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const { FeedbackList, FeedbackItem, FeedbackReponse } = require("./FeedbackOptions.styled");
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -19,3 +21,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 export default FeedbackOptions;
+
+FeedbackOptions.propTypes = {
+    options: PropTypes.array.isRequired,
+};

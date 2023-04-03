@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
 import { CategoryFeedback, FeedbackCategoryList, FeedbackItem, ValueFeedback } from "./Statistics.styled";
 
 const Statistics = ( { good, neutral, bad , total, positivePercentage } ) => {
     const percentGood = positivePercentage();
+
     return (
         <FeedbackCategoryList>
             <FeedbackItem>
@@ -34,3 +36,9 @@ const Statistics = ( { good, neutral, bad , total, positivePercentage } ) => {
 };
 
 export default Statistics;
+
+Statistics.propTypes = {
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+};
